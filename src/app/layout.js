@@ -1,5 +1,6 @@
 import { Lexend } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen bg-background-dark font-[family-name:var(--font-lexend)] text-white">
+        <Header />
         {children}
       </body>
     </html>

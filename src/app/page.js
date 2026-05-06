@@ -1,12 +1,3 @@
-import Header from "@/components/layout/Header";
+import HomePage from "@/features/home/HomePage";
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      <main>
-        <p className="p-10 text-text-muted">Page d'accueil </p>
-      </main>
-    </>
-  );
-}
+export default function Page() { return <HomePage />; }
