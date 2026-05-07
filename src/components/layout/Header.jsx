@@ -22,32 +22,20 @@ export default function Header() {
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-border-dark bg-background-dark/95 px-4 py-3 backdrop-blur-md md:px-10">
 
       <div className="flex items-center gap-8">
-
         <Link href="/" className="group flex items-center gap-3 text-white">
-          <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110">
-            sports_mma
-          </span>
-          <span className="hidden text-xl font-black uppercase tracking-tighter md:block">
-            TKPunchMag
-          </span>
+          <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110">sports_mma</span>
+          <span className="hidden text-xl font-black uppercase tracking-tighter md:block">TkPunchMag</span>
         </Link>
 
         <nav className="hidden items-center gap-8 border-l border-border-dark pl-8 lg:flex">
-
-          <Link href="/shop" className="text-sm font-bold uppercase text-white hover:text-primary">
-            Shop
-          </Link>
+          <Link href="/shop" className="text-sm font-bold uppercase text-white hover:text-primary">Shop</Link>
 
           <div className="relative group">
-
             <button className="text-sm font-bold uppercase text-white hover:text-primary">
               Categories
             </button>
-
             <div className="absolute left-0 top-full z-50 w-[500px] pt-2 opacity-0 invisible transition-all duration-200 group-hover:opacity-100 group-hover:visible">
-
               <div className="rounded-xl border border-border-dark bg-card-dark p-6 shadow-xl">
-
                 <div className="grid grid-cols-3 gap-6">
                   {categories.map((cat) => (
                     <div key={cat.name}>
@@ -72,12 +60,9 @@ export default function Header() {
 
               </div>
             </div>
-
           </div>
 
-          <Link href="/social" className="text-sm font-bold uppercase text-white hover:text-primary">
-            social
-          </Link>
+          <Link href="/social" className="text-sm font-bold uppercase text-white hover:text-primary">Social</Link>
         </nav>
       </div>
 
@@ -96,23 +81,14 @@ export default function Header() {
           </div>
         </label>
 
-        <Link
-          href="/login"
-          className="flex size-10 items-center justify-center rounded-lg bg-card-dark text-white hover:bg-primary"
-        >
+        <Link href="/login" className="flex size-10 items-center justify-center rounded-lg bg-card-dark text-white hover:bg-primary">
           <span className="material-symbols-outlined">person</span>
         </Link>
 
-        <Link
-          href="/cart"
-          className="flex size-10 items-center justify-center rounded-lg bg-card-dark text-white hover:bg-primary"
-        >
+        <Link href="/cart" className="flex size-10 items-center justify-center rounded-lg bg-card-dark text-white hover:bg-primary">
           <span className="material-symbols-outlined">shopping_cart</span>
         </Link>
 
-        <button className="flex size-10 items-center justify-center rounded-lg bg-card-dark text-white hover:bg-border-dark lg:hidden">
-          <span className="material-symbols-outlined">menu</span>
-        </button>
       </div>
     </header>
   );
