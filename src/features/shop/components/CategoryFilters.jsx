@@ -10,12 +10,9 @@ export default function CategoryFilters() {
 
     return (
         <div className="flex gap-4 p-8 overflow-x-auto border-b border-white/5 bg-background-dark">
-            {categories.map((cat) => (
-                <button
-                    key={cat}
-                    className="px-6 py-2 rounded-full text-xs font-black uppercase bg-white/5 hover:bg-primary/20 cursor-pointer transition-colors"
-                >
-                    {cat}
+            {categories.map((categorie) => (
+                <button key={categorie} className="px-6 py-2 rounded-full text-xs font-black uppercase bg-white/5 hover:bg-primary/20 cursor-pointer transition-colors">
+                    {categorie}
                 </button>
             ))}
         </div>
