@@ -6,10 +6,7 @@ const ATHLETE_BG =
 export default function AthleteSpotlight() {
   return (
     <section className="grid min-h-[500px] grid-cols-1 md:grid-cols-2">
-      <div
-        className="relative h-[400px] w-full bg-cover bg-center md:h-auto"
-        style={{ backgroundImage: `url(${ATHLETE_BG})` }}
-      >
+      <div className="relative h-[400px] w-full bg-cover bg-center md:h-auto" style={{ backgroundImage: `url(${ATHLETE_BG})` }}>
         <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent md:bg-gradient-to-r" />
       </div>
 
@@ -24,17 +21,13 @@ export default function AthleteSpotlight() {
           rounds.&rdquo;
         </h2>
 
-        <p className="mb-1 text-xl font-bold text-white">
-          - Marcus &ldquo;The Anvil&rdquo; Thorne
-        </p>
+        <p className="mb-1 text-xl font-bold text-white">- Marcus &ldquo;The Anvil&rdquo; Thorne</p>
+
         <p className="mb-8 text-sm uppercase tracking-wide text-text-muted">
           TKPunchMag Champion
         </p>
 
-        <Link
-          href="/shop"
-          className="group flex w-fit items-center gap-2 font-bold uppercase tracking-wide text-white transition-colors hover:text-primary"
-        >
+        <Link href="/shop" className="group flex w-fit items-center gap-2 font-bold uppercase tracking-wide text-white transition-colors hover:text-primary">
           Shop Marcus&apos;s Stack
           <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
             arrow_forward
