@@ -7,6 +7,8 @@ import Newsletter from "./components/Newsletter";
 import GuideSection from "./components/Guide";
 import ErrorState from "@/components/ui/ErrorState";
 
+import { getTopRatedProducts } from "@/lib/api/productsApi";
+
 export default async function ShopPage() {
 
   const { products, error } = await getTopRatedProducts();
@@ -28,25 +30,4 @@ export default async function ShopPage() {
       <Footer />
     </div>
   );
-}
-
-async function getTopRatedProducts() {
-  try {
-    const response = await fetch("http://localhost:5000/product/top-rated",
-      {
-        next: { revalidate: 60 },
-      }
-    );
-
-    const data = await response.json();
-    return {
-      products: data,
-      error: false,
-    };
-  } catch (error) {
-    return {
-      products: [],
-      error: true,
-    };
-  }
 }

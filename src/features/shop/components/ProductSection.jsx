@@ -3,7 +3,10 @@ import TopProductCard from "@/components/ui/TopProductCard";
 
 export default function ProductSection({ topRatedProducts }) {
 
+    console.log("Received topRatedProducts in ProductSection:", topRatedProducts);
+
     const products = topRatedProducts.topProducts;
+
     return (
         <section className="py-16 px-6 lg:px-20 bg-background-dark">
 
