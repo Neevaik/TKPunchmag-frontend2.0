@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { MOCK_PRODUCTS } from "@/lib/mockData";
 
+
 export default function ProductCarousel() {
   const products = MOCK_PRODUCTS.filter((p) => p.brand === "tkpunchmag");
 

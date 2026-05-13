@@ -1,5 +1,5 @@
 import ActionButton from "@/components/ui/ActionButton";
-import ProductCard from "@/components/ui/ProductCard";
+import TopProductCard from "@/components/ui/TopProductCard";
 
 export default function ProductSection({ topRatedProducts }) {
 
@@ -18,7 +18,7 @@ export default function ProductSection({ topRatedProducts }) {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
                 {products.map((product) => (
-                    <ProductCard
+                    <TopProductCard
                         key={product._id}
                         name={product.name}
                         brand={product.brand}

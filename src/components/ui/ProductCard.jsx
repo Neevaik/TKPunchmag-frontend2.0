@@ -1,52 +1,81 @@
-import ActionButton from "./ActionButton";
-
 export default function ProductCard({
-    name,
-    brand,
-    category,
+    title,
+    subtitle,
     price,
     rating,
+    badge,
+    brand,
     image,
+    description,
 }) {
     return (
-        <div className="
-        group
-        bg-card-dark
-        rounded-2xl
-        overflow-hidden
-        border
-        border-white/5
-        hover:border-primary/40
-        transition-all
-        duration-300
-        hover:-translate-y-1
-        cursor-pointer
-        flex
-        flex-col">
+        <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border-dark bg-card-dark transition-transform hover:scale-[1.02]">
+            {/* Image */}
+            <div className="relative">
+                <img
+                    src={image}
+                    alt={title}
+                    className="h-72 w-full object-cover"
+                />
 
-            <div className="h-72 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${image})` }}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">{category}</span>
+                {badge && (
+                    <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase text-white">
+                        {badge}
+                    </span>
+                )}
             </div>
 
-            <div className="p-5 flex flex-col flex-1">
-                <div>
-                    <h4 className="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">{name}</h4>
-                    <p className="text-white/40 text-xs mt-1 uppercase tracking-widest">{brand}</p>
-                    <div className="mt-4 flex items-center justify-between">
-                        <span className="text-xl font-black text-white">${price}</span>
-                        <div className="flex items-center gap-1 text-primary">
-                            <span className="material-symbols-outlined text-sm fill-1">star</span>
-                            <span className="text-xs font-bold text-white/80">{rating}</span>
-                        </div>
+            {/* Content */}
+            <div className="flex flex-1 flex-col p-5">
+                {/* Top section */}
+                <div className="space-y-3">
+                    {/* Brand */}
+                    <p className="text-sm uppercase tracking-wide text-primary">
+                        {brand}
+                    </p>
+
+                    {/* Title block */}
+                    <div className="min-h-[90px]">
+                        <h2 className="line-clamp-2 text-2xl font-bold text-white">
+                            {title}
+                        </h2>
+
+                        {subtitle && (
+                            <p className="mt-1 line-clamp-1 text-text-muted">
+                                {subtitle}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Description */}
+                    <div className="min-h-[72px]">
+                        {description && (
+                            <p className="line-clamp-3 text-sm leading-relaxed text-text-muted">
+                                {description}
+                            </p>
+                        )}
                     </div>
                 </div>
 
-                <ActionButton className="mt-6" size="sm">
-                    Ajouter au panier
-                </ActionButton>
-            </div>
+                {/* Bottom section */}
+                <div className="mt-auto flex items-end justify-between pt-6">
+                    {/* Price + Rating */}
+                    <div className="space-y-1">
+                        <p className="text-2xl font-black text-white">
+                            ${price}
+                        </p>
 
-        </div>
+                        <p className="text-sm text-yellow-400">
+                            ★ {rating}
+                        </p>
+                    </div>
+
+                    {/* Button */}
+                    <button className="rounded-lg bg-primary px-4 py-2 text-sm font-bold uppercase text-white transition hover:opacity-90">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </article>
     );
 }
