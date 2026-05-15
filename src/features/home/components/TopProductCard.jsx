@@ -1,29 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { MOCK_PRODUCTS } from "@/lib/mockData";
 import ProductSection from "@/features/shop/components/ProductSection";
-import ErrorState from "@/components/ui/ErrorState";
+import TopProductCard from "@/components/ui/TopProductCard";
 
-export default function ProductCarousel({ topRatedProducts, error }) {
+export default function ProductCarousel({ topRatedProducts }) {
 
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    const container = scrollRef.current;
-
-    if (!container) return;
-
-    const scrollAmount = 320;
-
-    container.scrollBy({
-      left:
-        direction === "left"
-          ? -scrollAmount
-          : scrollAmount,
-      behavior: "smooth",
-    });
-  };
+  const products = topRatedProducts.topProducts;
 
   return (
     <section className="border-y border-border-dark bg-[#120c0c] py-12">
@@ -34,10 +16,19 @@ export default function ProductCarousel({ topRatedProducts, error }) {
         </h2>
       </div>
 
-      {error ? (
-        <ErrorState title="Impossible de charger les produits" message="Une erreur est survenue lors de la récupération des produits." />) : (
-        <ProductSection topRatedProducts={topRatedProducts} />
-      )}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <TopProductCard
+            key={product._id}
+            name={product.name}
+            brand={product.brand}
+            category={product.category}
+            price={product.price}
+            rating={product.rating}
+            image={product.images?.[0]}
+          />
+        ))}
+      </div>
     </section>
   );
 }

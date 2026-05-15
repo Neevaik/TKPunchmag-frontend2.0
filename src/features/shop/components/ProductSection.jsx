@@ -1,9 +1,9 @@
 import ActionButton from "@/components/ui/ActionButton";
 import TopProductCard from "@/components/ui/TopProductCard";
+import ErrorState from "@/components/ui/ErrorState";
 
 export default function ProductSection({ topRatedProducts }) {
 
-    console.log("Received topRatedProducts in ProductSection:", topRatedProducts);
 
     const products = topRatedProducts.topProducts;
 
@@ -19,7 +19,6 @@ export default function ProductSection({ topRatedProducts }) {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
                 {products.map((product) => (
                     <TopProductCard
                         key={product._id}
@@ -31,8 +30,8 @@ export default function ProductSection({ topRatedProducts }) {
                         image={product.images?.[0]}
                     />
                 ))}
-
             </div>
+
         </section>
     );
 }

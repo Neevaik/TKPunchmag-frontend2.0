@@ -2,7 +2,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'tk-whey',
     title: 'TKPunchMag Whey',
-    subtitle: 'Chocolate Knockout',
     price: 49.99,
     rating: 4.9,
     badge: 'Best Seller',
@@ -16,7 +15,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'tk-pre',
     title: 'Knockout Pre-Workout',
-    subtitle: 'Fruit Punch',
     price: 39.99,
     rating: 4.8,
     badge: 'Best Seller',
@@ -28,7 +26,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'tk-bcaa',
     title: 'Recovery Corner BCAA',
-    subtitle: 'Blue Raspberry',
     price: 29.99,
     rating: 5.0,
     badge: 'Best Seller',
@@ -40,7 +37,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'tk-creatine',
     title: 'Iron Creatine',
-    subtitle: 'Unflavored',
     price: 24.99,
     rating: 4.7,
     badge: 'New',
@@ -52,7 +48,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'if-heavyweight-whey',
     title: 'Heavyweight Whey',
-    subtitle: 'Vanilla Ice Out',
     price: 54.99,
     rating: 4.95,
     badge: 'Iron Fist',
@@ -66,7 +61,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'combat-gloves',
     title: 'Pro Combat Gloves',
-    subtitle: '12 oz',
     price: 89.99,
     rating: 4.8,
     badge: 'New',
@@ -78,7 +72,6 @@ export const MOCK_PRODUCTS = [
   {
     id: 'sports-mat',
     title: 'Training Floor Mat',
-    subtitle: 'Roll-up',
     price: 64.5,
     rating: 4.6,
     badge: 'New',
