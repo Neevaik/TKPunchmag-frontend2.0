@@ -1,4 +1,5 @@
 import ActionButton from "./ActionButton";
+import Link from "next/link";
 
 export default function ProductCard({
     name,
@@ -40,7 +41,6 @@ export default function ProductCard({
                         <p className="text-2xl font-black text-white">${price}</p>
                         <p className="text-sm text-yellow-400">★ {rating}</p>
                     </div>
-
 
                     <ActionButton size="sm" onClick={onAddToCart}>
                         Ajouter au panier
