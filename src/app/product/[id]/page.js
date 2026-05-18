@@ -1,6 +1,6 @@
-import ProductPage from "@/features/product/ProductPage";
+import ProductPageDetail from "@/features/product/ProductPageDetail";
 
 export default async function Page({ params }) {
     const { id } = await params;
-    return <ProductPage id={id} />;
+    return <ProductPageDetail id={id} />;
 }
