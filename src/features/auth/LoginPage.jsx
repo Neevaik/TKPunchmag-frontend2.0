@@ -15,7 +15,7 @@ export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const API_URL = process.env.LOCALHOST_API;
 
     async function handleSubmit(event) {
         event.preventDefault()

@@ -20,7 +20,7 @@ export default async function ProductPageDetail({ id }) {
 
                     <div className="flex-1">
                         <img
-                            src={product.image}
+                            src={product.images?.[0]}
                             alt={product.name}
                             className="h-full w-full rounded-2xl object-cover"
                         />

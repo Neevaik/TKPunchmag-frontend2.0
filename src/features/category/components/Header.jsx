@@ -23,16 +23,8 @@ export default function CategoryHeader({
             </div>
 
             <div className="flex flex-wrap gap-3">
-                <BrandFilter
-                    brands={brands}
-                    value={selectedBrand}
-                    onChange={setSelectedBrand}
-                />
-
-                <SortFilter
-                    value={sortBy}
-                    onChange={setSortBy}
-                />
+                <BrandFilter brands={brands} value={selectedBrand} onChange={setSelectedBrand} />
+                <SortFilter value={sortBy} onChange={setSortBy} />
             </div>
         </div>
     );
