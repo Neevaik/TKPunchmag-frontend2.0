@@ -3,10 +3,12 @@ const NEXT_PUBLIC_PRODUCT_API_URL = process.env.NEXT_PUBLIC_PRODUCT_API_URL;
 export async function getTopRatedProducts() {
     try {
         const response = await fetch(`${NEXT_PUBLIC_PRODUCT_API_URL}/top-rated`, { next: { revalidate: 60 }, });
-
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-        return await response.json();
+        const res = await response.json();
+        return {
+            products: res.topProducts,
+            error: false,
+        }
 
     } catch (error) {
         return {

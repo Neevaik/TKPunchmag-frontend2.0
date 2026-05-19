@@ -10,7 +10,6 @@ import { getTopRatedProducts } from "@/lib/api/products.api";
 export default async function Home() {
 
   const { products, error } = await getTopRatedProducts();
-
   return (
     <>
       <main>

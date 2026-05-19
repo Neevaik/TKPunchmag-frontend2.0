@@ -4,8 +4,6 @@ import TopProductCard from "@/components/ui/TopProductCard";
 
 export default function ProductCarousel({ topRatedProducts }) {
 
-  const products = topRatedProducts.topProducts;
-
   return (
     <section className="border-y border-border-dark bg-[#120c0c] py-12">
       <div className="mb-8 flex items-center justify-between px-4 md:px-10 lg:px-40">
@@ -16,9 +14,10 @@ export default function ProductCarousel({ topRatedProducts }) {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {topRatedProducts.map((product) => (
           <TopProductCard
             key={product._id}
+            id={product._id}
             name={product.name}
             brand={product.brand}
             category={product.category}
