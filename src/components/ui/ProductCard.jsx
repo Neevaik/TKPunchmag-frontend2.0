@@ -12,12 +12,20 @@ export default function ProductCard({
     onAddToCart,
 }) {
 
+    function getCloudinaryImage(path) {
+        return `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${path}`;
+    }
+
     return (
         <Link href={`/product/${id}`} className="block h-full">
             <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border-dark bg-card-dark transition-transform hover:scale-[1.02] cursor-pointer">
 
                 <div className="relative">
-                    <img src={image} alt={name} className="h-72 w-full object-cover" />
+                    <img
+                        src="https://res.cloudinary.com/dqwaxqmdd/image/upload/Home/tkpunchmag/products/supplements/Recovery-Corner-BCAA/Recovery_Corner_BCAA_dx4et2"
+                        alt={name}
+                        className="h-72 w-full object-cover"
+                    />
                     {/* {badge && (
                         <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase text-white">
                             {badge}
@@ -55,7 +63,7 @@ export default function ProductCard({
                             </p>
                         </div>
 
-                        <div onClick={(e) => {e.preventDefault();onAddToCart?.();}}>
+                        <div onClick={(e) => { e.preventDefault(); onAddToCart?.(); }}>
                             <ActionButton size="sm">
                                 Ajouter au panier
                             </ActionButton>
